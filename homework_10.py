@@ -1,5 +1,6 @@
 from collections import UserDict
 
+
 class Field:
     def __init__(self, value=None):
         self.value = value
@@ -80,15 +81,13 @@ class AssistantBot:
         if name in self.contacts:
             self.contacts[name] = phone
             return f"Zmieniono numer telefonu dla kontaktu {name} na {phone}."
-        else:
-            raise IndexError
+        raise IndexError
 
     @input_error
     def handle_phone(self, name):
         if name in self.contacts:
             return f"Numer telefonu dla kontaktu {name}: {self.contacts[name]}."
-        else:
-            raise IndexError
+        raise IndexError
 
     @input_error
     def handle_show_all(self):
